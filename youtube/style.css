@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.head {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: black;
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.center {
+    flex: 0 1 720px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search {
+    flex: 2;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    flex: 2;
+    min-width: 0;
+    height: 40px;
+    padding: 0 16px;
+    background-color: #121212;
+    border: 1px solid #303030;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+    color: #f1f1f1;
+    font-size: 16px;
+    justify-content: center;
+}
+
+
+.search-btn {
+    width: 64px;
+    height: 40px;
+    background-color: #222222;
+    border: 1px solid #303030;
+    border-radius: 0 40px 40px 0;
+    color: #f1f1f1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #f1f1f1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 16px;
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.box {
+    cursor: pointer;
+}
+
+.box img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+.garchig {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.suvag {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #aaaaaa;
+}

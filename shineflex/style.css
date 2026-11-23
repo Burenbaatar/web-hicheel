@@ -1,0 +1,116 @@
+/* ===== Ерөнхий тохиргоо ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f3ec;
+    color: #161b2e;
+    display: flex;
+    flex-direction: column;       /* header, body, footer дээрээс доош */
+    min-height: 100vh;            /* хуудас дор хаяж дэлгэцийн өндөртэй */
+}
+
+/* ===== Header: лого зүүн, цэс баруун ===== */
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;          /* лого, цэсийг босоо тэнхлэгт тэгшлэнэ */
+    padding: 16px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;          /* зураг, текстийг зэрэгцүүлнэ */
+    gap: 12px;
+    padding: 2px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;                    /* холбоосуудын хоорондох зай */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== Body: гурван багц нэг мөрөнд ===== */
+.body {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Карт бүр тэнцүү өргөнтэй, дотроо багана */
+.anhan,
+.dund,
+.Ahisan {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 28px;
+    background-color: white;
+    border: 2px solid #d8d0bf;
+    border-radius: 14px;
+}
+
+/* Дунд багцыг онцолно */
+.dund {
+    border-color: #ff7a45;
+}
+
+.body h2 {
+    margin: 0;
+}
+
+.money {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    color: #b8410f;
+}
+
+.body ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.body button {
+    margin-top: auto;             /* товчийг картын доод хэсэгт түлхэнэ */
+    padding: 12px;
+    background-color: #161b2e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* ===== Footer: багтахгүй бол шинэ мөрөнд ===== */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 32px;
+    padding: 24px;
+    background-color: black;
+    margin-top: auto;             /* footer-ийг хуудасны хамгийн доор түлхэнэ */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}

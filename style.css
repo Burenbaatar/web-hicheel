@@ -1,0 +1,141 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+.header{
+    background-color: gray;
+    text-align: center;
+    margin: 0px;
+    padding: 3px;
+}
+.nav{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+.nav a{
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.article{
+    display: flex;
+   
+    width: 100%;
+    
+    
+}
+.article  img{
+    width: 200px;
+    height: 350px;
+ 
+}
+.article_text {
+    flex: 1;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.article_text h2{
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.article_text p{
+    font-size: 30px;
+    font-style: italic;
+}
+.form{
+    width: 100%;    
+    margin-top: 20px;
+    padding: 20px;
+}
+.form form{
+    max-width: 400px;          
+    margin: auto;
+}
+.form h2{
+    text-align: center;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* "Minii Tuhai"-тай ижил */
+    margin: 0;
+}
+.form label{
+    display: block;  
+    margin-top: 15px;
+    font-size: 20px;
+    font-style: italic;
+}
+.form input,
+.form select,
+.form textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form textarea{
+    resize: vertical;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus{
+    outline: none;
+    border-color: gray;
+    background-color: white;
+}
+.form button{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: gray;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+}
+.nemelt{
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.nemelt h3{
+    text-align: center;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0 0 20px 0;
+}
+.nemelt ul{
+    list-style: none;           
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;      
+    grid-template-rows: repeat(4, auto); 
+    grid-auto-flow: column;              
+    gap: 10px 20px;
+}
+.nemelt li{
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;         
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+.footer{
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
