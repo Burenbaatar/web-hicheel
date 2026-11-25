@@ -10,9 +10,13 @@ a
     color: inherit;
     text-decoration: none;
 }
+
+/* ===== GIFT BAR ===== */
+
 .gift
 {
     background-color: #1E3B31;
+    padding: 10px 16px;
 }
 
 .gift p
@@ -20,14 +24,26 @@ a
     margin: 0px;
     color: white;
     text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
-.nav 
+/* ===== NAV ===== */
+
+/* position: sticky -> хуудсаа доош гүйлгэхэд top: 0 дээр наалдаад үлдэнэ.
+   z-index: 100 -> доор байгаа badge, товч зэрэг positioned элементүүдээс
+   дээр харагдуулна. Үүнгүй бол гүйлгэхэд badge-ууд nav дээгүүр гарна. */
+.nav
 {
     display: flex;
     gap: 10px;
     align-items: center;
     padding: 16px 40px;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: #FAF9F5;
+    border-bottom: 1px solid #E5E2D9;
 }
 
 .links
@@ -37,11 +53,49 @@ a
     gap: 24px;
 }
 
+/* Hover хийхэд доороос нь зураас сунаж гарна.
+   a = relative (лавлах цэг), ::after = absolute (a-гийн доод талд). */
+.nav a
+{
+    position: relative;
+}
+
+.nav a::after
+{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -4px;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after
+{
+    width: 100%;
+}
+
 .logo
 {
     flex: 2;
     text-align: center;
     font-family: "Cormorant Garamond", serif;
+}
+
+.logo h1
+{
+    margin: 0px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.logo p
+{
+    margin: 2px 0px 0px;
+    font-size: 11px;
+    letter-spacing: 3px;
 }
 
 .btn
@@ -52,6 +106,37 @@ a
     gap: 20px;
     justify-content: flex-end;
 }
+
+.search, .me, .shop
+{
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* Сагсан дээрх тоо: .shop = relative, ::after = absolute баруун дээд буланд */
+.shop
+{
+    position: relative;
+}
+
+.shop::after
+{
+    content: "2";
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #9E302C;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+}
+
+/* ===== HERO ===== */
 
 .hero
 {
@@ -66,12 +151,38 @@ a
     padding: 40px;
 }
 
-.hero img
+/* Зургийн хайрцаг relative -> доторх .hero-tag-ийг зургийн буланд байрлуулна */
+.hero-img
 {
-
     width: 50%;
+    position: relative;
+}
+
+.hero-img img
+{
+    display: block;
+    width: 100%;
     height: 560px;
     object-fit: cover;
+}
+
+.hero-tag
+{
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #FAF9F5;
+    font-size: 13px;
+}
+
+.hero-tag i
+{
+    color: #9E302C;
 }
 
 .label
@@ -138,6 +249,9 @@ a
     text-decoration: underline;
     text-underline-offset: 6px;
 }
+
+/* ===== FEATURES ===== */
+
 .features
 {
     display: flex;
@@ -162,3 +276,596 @@ a
     color: #1E3B31;
 }
 
+/* ===== SECTION (ерөнхий) ===== */
+
+.section
+{
+    padding: 80px 40px;
+}
+
+.section-head
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.section-head .label
+{
+    margin: 0px;
+}
+
+.section-title
+{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 8px 0px 0px;
+}
+
+/* ===== CATEGORIES ===== */
+
+.categories
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.category
+{
+    background-color: #EEEDE4;
+    padding: 32px 16px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category:hover
+{
+    transform: translateY(-4px);
+}
+
+.category-icon
+{
+    width: 72px;
+    height: 72px;
+    margin: 0px auto 16px;
+    border-radius: 50%;
+    background-color: #FAF9F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #9E302C;
+}
+
+.category p
+{
+    margin: 0px;
+    font-weight: 500;
+}
+
+/* ===== PRODUCTS ===== */
+
+.products-section
+{
+    padding-top: 0px;
+}
+
+.products
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* relative -> badge, зүрх, "Quick add" бүгд энэ хайрцгийн булангаас байрлана.
+   overflow: hidden -> хайрцагнаас гадуур гарсан хэсэг (доор нуусан товч) харагдахгүй. */
+.product-img
+{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-green
+{
+    background-color: #E4EBE6;
+}
+
+.bg-red
+{
+    background-color: #F3E6E2;
+}
+
+.bg-gold
+{
+    background-color: #F1EADB;
+}
+
+.bg-beige
+{
+    background-color: #EEEDE4;
+}
+
+.product-icon
+{
+    font-size: 80px;
+    color: #1E3B31;
+    transition: transform 0.4s;
+}
+
+.bg-red .product-icon
+{
+    color: #9E302C;
+}
+
+.bg-gold .product-icon
+{
+    color: #B8893B;
+}
+
+.product:hover .product-icon
+{
+    transform: scale(1.1);
+}
+
+/* z-index: 2 -> icon томрох үед (transform) badge-ийн дээгүүр гарахаас сэргийлнэ */
+.badge
+{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 4px 10px;
+    background-color: #1E3B31;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.badge-red
+{
+    background-color: #9E302C;
+}
+
+.wish
+{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #1E3B31;
+    cursor: pointer;
+}
+
+.wish:hover
+{
+    color: #9E302C;
+}
+
+/* bottom: -60px -> эхэндээ хайрцгийн доор нуугдсан.
+   Hover хийхэд bottom: 12px болж дээш гулсаж гарна. */
+.quick-add
+{
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: -60px;
+    z-index: 2;
+    padding: 12px;
+    border: none;
+    background-color: #1E3B31;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: bottom 0.3s;
+}
+
+.product:hover .quick-add
+{
+    bottom: 12px;
+}
+
+.quick-add:hover
+{
+    background-color: #9E302C;
+}
+
+.product-name
+{
+    margin: 16px 0px 4px;
+    font-weight: 500;
+}
+
+.price
+{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.price s
+{
+    opacity: 0.5;
+    margin-right: 6px;
+}
+
+.sale
+{
+    color: #9E302C;
+}
+
+/* ===== GIFT GUIDE BANNER ===== */
+
+.banner
+{
+    position: relative;
+    overflow: hidden;
+    margin: 0px 40px;
+    padding: 80px 40px;
+    background-color: #1E3B31;
+    color: white;
+    text-align: center;
+}
+
+/* ::before, ::after -> HTML-д юу ч нэмэлгүйгээр 2 чимэглэлийн дугуй зурна */
+.banner::before
+{
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.banner::after
+{
+    content: "";
+    position: absolute;
+    bottom: -140px;
+    left: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* z-index: 1 -> текст дугуйнуудын дээр гарна.
+   Устгаад үзээрэй: ::after-ийн дугуй текстийн дээгүүр зурагдана. */
+.banner-content
+{
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0px auto;
+}
+
+.banner .label
+{
+    color: #E8B4A0;
+}
+
+.banner h2
+{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 12px 0px;
+}
+
+.banner-desc
+{
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.btn-light
+{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 14px 28px;
+    background-color: #FAF9F5;
+    color: #1E3B31;
+    transition: background-color 0.3s;
+}
+
+.btn-light:hover
+{
+    background-color: #EEEDE4;
+}
+
+/* ===== STORY ===== */
+
+.story
+{
+    max-width: 760px;
+    margin: 0px auto;
+    padding: 100px 40px;
+    text-align: center;
+}
+
+/* z-index: 0 -> blockquote өөрөө шинэ "давхаргын бүлэг" (stacking context) болно.
+   Тиймээс доорх ::before-ийн z-index: -1 нь зөвхөн энэ текстийн ард орно,
+   хуудасны арын өнгөний ард алга болохгүй. */
+.story blockquote
+{
+    position: relative;
+    z-index: 0;
+    margin: 32px 0px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.story blockquote::before
+{
+    content: "\201C";
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    font-size: 200px;
+    line-height: 1;
+    color: #9E302C;
+    opacity: 0.15;
+}
+
+.signature
+{
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* ===== NEWSLETTER ===== */
+
+.newsletter
+{
+    background-color: #EEEDE4;
+    padding: 64px 40px;
+    text-align: center;
+}
+
+.newsletter h2
+{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0px 0px 8px;
+}
+
+.newsletter p
+{
+    margin: 0px 0px 24px;
+    opacity: 0.8;
+}
+
+.news-form
+{
+    display: flex;
+    max-width: 460px;
+    margin: 0px auto;
+}
+
+.news-form input
+{
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #D9D5C8;
+    background-color: white;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.news-form button
+{
+    padding: 0px 28px;
+    border: none;
+    background-color: #1E3B31;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.news-form button:hover
+{
+    background-color: #9E302C;
+}
+
+/* ===== FOOTER ===== */
+
+.footer
+{
+    background-color: #1E3B31;
+    color: #FAF9F5;
+    padding: 64px 40px 24px;
+}
+
+.footer-top
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-brand h3
+{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0px 0px 8px;
+}
+
+.footer-brand p
+{
+    margin: 0px;
+    opacity: 0.7;
+}
+
+.socials
+{
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    font-size: 18px;
+}
+
+.footer-col
+{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col h4
+{
+    margin: 0px 0px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.footer a
+{
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.footer a:hover
+{
+    opacity: 1;
+}
+
+.copyright
+{
+    margin: 24px 0px 0px;
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* ===== УТАС (800px-ээс нарийн дэлгэц) ===== */
+
+@media (max-width: 800px)
+{
+    .nav, .section, .footer
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .links, .btn > a
+    {
+        display: none;
+    }
+
+    .logo
+    {
+        text-align: left;
+    }
+
+    .logo h1
+    {
+        font-size: 24px;
+    }
+
+    .hero
+    {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-img
+    {
+        width: 100%;
+    }
+
+    .hero-img img
+    {
+        height: 360px;
+    }
+
+    .hero-text
+    {
+        padding: 32px 16px;
+    }
+
+    .hero h2
+    {
+        font-size: 44px;
+    }
+
+    .features
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .section-head
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .categories, .products
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .product-img
+    {
+        height: 220px;
+    }
+
+    .banner
+    {
+        margin: 0px 16px;
+        padding: 56px 24px;
+    }
+
+    .story
+    {
+        padding: 72px 16px;
+    }
+
+    .story blockquote
+    {
+        font-size: 26px;
+    }
+
+    .newsletter
+    {
+        padding: 48px 16px;
+    }
+
+    .footer-top
+    {
+        grid-template-columns: 1fr;
+    }
+}
