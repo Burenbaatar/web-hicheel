@@ -1,0 +1,200 @@
+body
+{
+    background-color: #111111;
+    color: white;
+    /* Inter ачаалагдахгүй бол таслалын дараах sans-serif-ийг хэрэглэнэ */
+    font-family: "Inter", sans-serif;
+    /* Агуулга 1440px-ээс өргөн тэлэхгүй, margin auto нь голлуулна.
+       Ингэснээр өргөн дэлгэц дээр бичвэр, зураг хоёр хол зайдахгүй.
+       Тоог багасгавал ойртоно, ихэсгэвэл холдоно. */
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.logo h1
+{
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo:hover
+{
+    cursor: pointer;
+}
+
+.tseg
+{
+    color: #F26A21;
+}
+
+.navbar
+{
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.navbar a:hover
+{
+    color: #F26A21;
+}
+
+.about
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.deedh
+{
+    color: #F26A21;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px; /* үсэг хоорондын зай */
+    margin: 0;
+}
+
+.name
+{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    color: #F2EDE4;
+    font-size: 150px;
+    line-height: 0.95;
+    text-transform: uppercase; /* HTML-д жижгээр бичсэн ч ТОМ үсгээр харуулна */
+    /* h1 анхнаасаа 0.67em (150px-д ~100px) margin-тэй тул өөрсдөө зааж өгнө */
+    margin: 40px 0 32px 0;
+}
+
+.ner
+{
+    color: #F26A21;
+}
+
+.chadvar
+{
+    max-width: 520px; /* 520px-ээс өргөн тэлэхгүй, дараагийн мөр рүү орно */
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d9d9d9;
+    margin: 0;
+}
+
+.btn
+{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-top: 36px;
+}
+
+.contact
+{
+    border: 1px solid #F26A21;
+    border-radius: 999px; /* маш том утга = бүрэн дугуй булантай товч */
+    padding: 14px 32px;
+    background-color: #F26A21;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact a
+{
+    color: #111111;
+    text-decoration: none;
+}
+
+.tosol
+{
+    border: 1px solid white;
+    border-radius: 999px;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tosol a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.a1
+{
+    display: flex;
+    gap: 56px;
+    margin-top: 80px;
+}
+
+.spec
+{
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888888;
+    margin: 0;
+}
+
+
+.dev
+{
+    display: block;
+    margin-top: 10px;
+    white-space: nowrap; 
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.pic
+{
+    position: relative; 
+    height: 820px;
+    overflow: hidden;
+    margin-right: -80px;
+}
+
+.too
+{
+    position: absolute;
+    top: -50px;
+    right: 30px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 690px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px #F26A21;
+}
+
+.pic img
+{
+    position: relative; 
+    z-index: 1;
+    display: block;
+    height: 1050px;
+}
